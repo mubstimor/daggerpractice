@@ -16,6 +16,7 @@ import mubstimor.android.daggerpractice.BaseApplication;
                 AndroidSupportInjectionModule.class,
                 ActivityBuildersModule.class,
                 AppModule.class,
+                ViewModelFactoryModule.class
         }
 )
 public interface AppComponent extends AndroidInjector<BaseApplication> {
