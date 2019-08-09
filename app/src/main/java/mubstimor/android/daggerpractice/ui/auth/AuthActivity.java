@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.bumptech.glide.RequestManager;
 
@@ -18,6 +20,7 @@ import javax.inject.Inject;
 
 import dagger.android.support.DaggerAppCompatActivity;
 import mubstimor.android.daggerpractice.R;
+import mubstimor.android.daggerpractice.di.ViewModelKey;
 import mubstimor.android.daggerpractice.models.User;
 import mubstimor.android.daggerpractice.viewmodels.ViewModelProviderFactory;
 
@@ -28,6 +31,8 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
     private AuthViewModel viewModel;
 
     private EditText userId;
+
+    private ProgressBar progressBar;
 
     @Inject
     ViewModelProviderFactory providerFactory;
@@ -43,6 +48,7 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
         userId = findViewById(R.id.txtUsername);
+        progressBar = findViewById(R.id.progress_bar);
 
         findViewById(R.id.btnLogin).setOnClickListener(this);
 
@@ -55,14 +61,46 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
     }
 
     private void subscribeObservers(){
-        viewModel.observeUser().observe(this, new Observer<User>() {
+        viewModel.observeUser().observe(this, new Observer<AuthResource<User>>() {
             @Override
-            public void onChanged(User user) {
-                if(user != null){
-                    Log.d(TAG, "onChanged: " + user.getEmail());
+            public void onChanged(AuthResource<User> userAuthResource) {
+                if(userAuthResource != null){
+                    switch (userAuthResource.status){
+                        case LOADING:{
+                            showProgressBar(true);
+                            break;
+                        }
+
+                        case AUTHENTICATED:{
+                            showProgressBar(false);
+                            Log.d(TAG, "onChanged: LOGIN SUCCESS:  " + userAuthResource.data.getEmail());
+                            break;
+                        }
+
+                        case ERROR:{
+                            showProgressBar(false);
+                            Toast.makeText(AuthActivity.this, userAuthResource.message
+                                    + "\nDid you enter a number btn 1 and 10?", Toast.LENGTH_SHORT).show();
+                            break;
+                        }
+
+                        case NOT_AUTHENTICATED:{
+                            showProgressBar(false);
+                            break;
+                        }
+                    }
                 }
             }
         });
+
+    }
+
+    private void showProgressBar(boolean isVisible){
+        if(isVisible){
+            progressBar.setVisibility(View.VISIBLE);
+        } else {
+            progressBar.setVisibility(View.GONE );
+        }
     }
 
     private void setLogo(){
