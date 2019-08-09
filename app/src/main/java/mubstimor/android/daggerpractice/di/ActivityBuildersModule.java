@@ -5,6 +5,7 @@ import dagger.android.ContributesAndroidInjector;
 import mubstimor.android.daggerpractice.di.auth.AuthModule;
 import mubstimor.android.daggerpractice.di.auth.AuthViewModelsModule;
 import mubstimor.android.daggerpractice.ui.auth.AuthActivity;
+import mubstimor.android.daggerpractice.ui.main.MainActivity;
 
 @Module
 public abstract class ActivityBuildersModule {
@@ -13,5 +14,8 @@ public abstract class ActivityBuildersModule {
             modules = {AuthViewModelsModule.class, AuthModule.class}
     )
     abstract AuthActivity contributeAuthActivity();
+
+    @ContributesAndroidInjector
+    abstract MainActivity contributeMainActivity();
 
 }
