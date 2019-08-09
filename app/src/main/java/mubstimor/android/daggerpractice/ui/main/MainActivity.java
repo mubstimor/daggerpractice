@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import mubstimor.android.daggerpractice.BaseActivity;
 import mubstimor.android.daggerpractice.R;
+import mubstimor.android.daggerpractice.ui.main.profile.ProfileFragment;
 
 public class MainActivity extends BaseActivity {
 
@@ -21,6 +22,13 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
         Toast.makeText(this, "Main activity", Toast.LENGTH_SHORT).show();
+        testFragment();
+    }
+
+    private void testFragment(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.main_container, new ProfileFragment())
+                .commit();
     }
 
     @Override
