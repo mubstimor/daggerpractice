@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,6 +23,7 @@ import dagger.android.support.DaggerAppCompatActivity;
 import mubstimor.android.daggerpractice.R;
 import mubstimor.android.daggerpractice.di.ViewModelKey;
 import mubstimor.android.daggerpractice.models.User;
+import mubstimor.android.daggerpractice.ui.main.MainActivity;
 import mubstimor.android.daggerpractice.viewmodels.ViewModelProviderFactory;
 
 public class AuthActivity extends DaggerAppCompatActivity implements View.OnClickListener{
@@ -61,7 +63,7 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
     }
 
     private void subscribeObservers(){
-        viewModel.observeUser().observe(this, new Observer<AuthResource<User>>() {
+        viewModel.observeAuthState().observe(this, new Observer<AuthResource<User>>() {
             @Override
             public void onChanged(AuthResource<User> userAuthResource) {
                 if(userAuthResource != null){
@@ -74,6 +76,7 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
                         case AUTHENTICATED:{
                             showProgressBar(false);
                             Log.d(TAG, "onChanged: LOGIN SUCCESS:  " + userAuthResource.data.getEmail());
+                            onLoginSuccess();
                             break;
                         }
 
@@ -93,6 +96,12 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
             }
         });
 
+    }
+
+    private void onLoginSuccess(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void showProgressBar(boolean isVisible){
