@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -20,12 +19,10 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Toast.makeText(this, "Main activity", Toast.LENGTH_SHORT).show();
-        testFragment();
+        profileFragment();
     }
 
-    private void testFragment(){
+    private void profileFragment(){
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.main_container, new ProfileFragment())
                 .commit();
