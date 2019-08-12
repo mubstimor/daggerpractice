@@ -1,0 +1,27 @@
+
+t
+Dapp/src/main/java/mubstimor/android/daggerpractice/di/AppModule.java,7/5/7556079fe1a72009f5313d79f987b7e6db91f444
+Å
+Qapp/src/main/java/mubstimor/android/daggerpractice/di/ActivityBuildersModule.java,0/2/02533ca407b9246ddf46b027484bb837a8ce43af
+w
+Gapp/src/main/java/mubstimor/android/daggerpractice/di/AppComponent.java,4/4/44b47b1959eeab3054b99f191c3b4f2fc16ddf57
+w
+Gapp/src/main/java/mubstimor/android/daggerpractice/BaseApplication.java,9/c/9c4ac4342532df6e68b6ab5ab292ad791659e5c1
+@
+app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
+|
+Lapp/src/main/java/mubstimor/android/daggerpractice/network/auth/AuthApi.java,f/4/f48590292794e547dc3cb7a379b97010d933d0d6
+s
+Capp/src/main/java/mubstimor/android/daggerpractice/models/User.java,8/3/8301bfe6de297d547789ae4150c7e5413d25a91d
+|
+Lapp/src/main/java/mubstimor/android/daggerpractice/ui/auth/AuthActivity.java,7/7/77b808554ed15414c08fe6bca39d3ccffb56d4f9
+}
+Mapp/src/main/java/mubstimor/android/daggerpractice/ui/auth/AuthViewModel.java,7/3/7313a895d42068dc8bcdf67fddb1afccdb2bfdff
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+v
+Fapp/src/main/java/mubstimor/android/daggerpractice/SessionManager.java,4/0/40d8c457636836ba522a9ee1ad7e22a0bb683c0c
+|
+Lapp/src/main/java/mubstimor/android/daggerpractice/ui/main/MainActivity.java,4/0/405c4aaee7e3952d5bcf2cc442090fcd20a2866e
+á
+Wapp/src/main/java/mubstimor/android/daggerpractice/ui/main/profile/ProfileFragment.java,c/2/c20875e5fe8d75a45accdaf0d43995d2d6f79cfe
