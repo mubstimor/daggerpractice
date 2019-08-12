@@ -1,0 +1,4 @@
+
+Ksquid:S1068"-Remove this unused "viewModel" private field.(¼ÔÝ‘8ŠÕ°´Ç-
+vsquid:S1450"XRemove the "viewModel" field and declare it as a local variable in the relevant methods.(¼ÔÝ‘8ŠÕ°´Ç-
+asquid:UselessImportCheck"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8ŠÕ°´Ç-

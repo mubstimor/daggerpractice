@@ -1,0 +1,11 @@
+
+Psquid:S1199|"-Extract this nested code block into a method.(Š öüøÿÿÿÿ8ö–§«Ç-
+\"squid:SwitchLastCaseIsDefaultCheck{""Add a default case to this switch.(×“¾ñùÿÿÿÿ8ö–§«Ç-
+isquid:UselessImportCheck"ERemove this unused import 'androidx.appcompat.app.AppCompatActivity'.(€¶£î
+nsquid:S1301{"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ8ö–§«Ç-
+Psquid:S1199G"-Extract this nested code block into a method.(Šæð¾ùÿÿÿÿ8ÊšÌ±Ç-
+Jsquid:S1199L"-Extract this nested code block into a method.(çéà8ÊšÌ±Ç-
+Ksquid:S1199S"-Extract this nested code block into a method.(Ö÷„”8ÊšÌ±Ç-
+Ksquid:S1199Z"-Extract this nested code block into a method.(ƒÖ±Å8ÊšÌ±Ç-
+}squid:UselessImportCheck"MRemove this unused import 'mubstimor.android.daggerpractice.di.ViewModelKey'.(ŽšÒÁýÿÿÿÿ8ÊšÌ±Ç-
+qsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(’ó›Ýüÿÿÿÿ8ÊšÌ±Ç-
